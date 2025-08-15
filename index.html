@@ -22,6 +22,45 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #1f2937;
+            margin: auto;
+            padding: 2rem;
+            border-radius: 1rem;
+            max-width: 90%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            animation-name: animatetop;
+            animation-duration: 0.4s;
+        }
+        @keyframes animatetop {
+            from { top: -300px; opacity: 0 }
+            to { top: 0; opacity: 1 }
+        }
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close-btn:hover,
+        .close-btn:focus {
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body class="bg-slate-950 text-gray-100 antialiased">
@@ -192,8 +231,11 @@
                         <li>Implemented JWT/OAuth2 for secure third-party API access.</li>
                         <li>Enhanced mobile responsiveness, reducing mobile load time by 20%.</li>
                         <li>Recognized with a "Top Performer Award" for leading critical enhancements.</li>
-                        <li>Improved legacy module performance by 25% using SOLID principles.</li>
+                        <li>Improved legacy module performance by 25% via SOLID principles.</li>
                     </ul>
+                    <button class="expand-project-btn mt-4 bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-full transition-colors" data-project="nedbank">
+                        Read More ✨
+                    </button>
                 </div>
                 <!-- Brolink - Insurance Platform -->
                 <div class="bg-slate-900 p-8 rounded-2xl shadow-xl card-hover transition-transform duration-300">
@@ -202,10 +244,13 @@
                         A web application built with ReactJS for insurance brokers to serve policyholders.
                     </p>
                     <ul class="list-disc list-inside text-gray-300 space-y-2">
-                        <li>Designed and developed the user interface and experience using ReactJS and Formik.</li>
-                        <li>Crafted intuitive front-end flows and built responsive UI components.</li>
+                        <li>Designed and developed the user interface and experience for an insurance platform, creating a marketplace that connects insurance providers with potential customers while helping users find the best deals.</li>
+                        <li>Crafted intuitive front-end flows and built responsive UI components using ReactJS and Formik, performed validation, improving user engagement and interaction.</li>
                         <li>Integrated and tested REST APIs using Swagger and Postman.</li>
                     </ul>
+                    <button class="expand-project-btn mt-4 bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-full transition-colors" data-project="brolink">
+                        Read More ✨
+                    </button>
                 </div>
             </div>
         </section>
@@ -223,7 +268,7 @@
                 <button id="generate-btn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full transition-colors shadow-lg">
                     Generate Cover Letter ✨
                 </button>
-                <div id="loading-indicator" class="hidden mt-4 text-indigo-400">
+                <div id="loading-indicator-cover-letter" class="hidden mt-4 text-indigo-400">
                     Generating...
                 </div>
                 <div id="cover-letter-output" class="mt-8 p-6 bg-slate-800 rounded-lg text-left whitespace-pre-wrap text-gray-300">
@@ -272,8 +317,22 @@
     <footer class="bg-slate-900 text-center text-gray-400 py-6 mt-12">
         <p>&copy; 2025 Anurag Singh. All rights reserved.</p>
     </footer>
+    
+    <!-- Modal for Project Details -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="modal-title" class="text-2xl font-bold mb-4 text-indigo-400"></h3>
+            <div id="modal-content-area" class="text-gray-300 text-left">
+                <!-- Project details will be loaded here -->
+            </div>
+            <div id="loading-indicator-project" class="hidden mt-4 text-indigo-400 text-center">
+                Generating summary...
+            </div>
+        </div>
+    </div>
 
-    <!-- JavaScript for smooth scrolling and mobile menu -->
+    <!-- JavaScript for smooth scrolling, mobile menu, and API integrations -->
     <script>
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -297,7 +356,7 @@
             const jobDescription = document.getElementById('job-description').value;
             const outputDiv = document.getElementById('cover-letter-output');
             const generateBtn = document.getElementById('generate-btn');
-            const loadingIndicator = document.getElementById('loading-indicator');
+            const loadingIndicator = document.getElementById('loading-indicator-cover-letter');
 
             if (!jobDescription) {
                 outputDiv.textContent = 'Please enter a job description.';
@@ -340,13 +399,13 @@ Nihilent Limited, Senior Software Engineer - Backend Developer (Pune, India, May
 • Achieved 95% unit test coverage with xUnit, significantly reducing deployment errors by 30% and ensuring high-quality production code.
 • Achieved rapid project completion, delivering the solution in just 50% of the allocated time, demonstrating efficiency and technical expertise.
 • Optimized CI/CD pipelines in Azure DevOps to cut deployment time by 25%, reinforcing agile practices and operational stability in a large corporate environment.
-• Authored comprehensive technical documentation that reduced onboarding time for new developers by 25%, supporting effective knowledge transfer and sustainable software design.
+• Authored comprehensive technical documentation that reduced new developer onboarding time by 25%, supporting effective knowledge transfer and sustainable software design.
 
 KEY PROJECTS
 Nedbank Business Hub - CCI (Corporate Card Issuing)
 • Security Integration: Implemented JWT/OAuth2 for secure third-party API access.
 • Mobile Responsiveness: Enhanced cross-device compatibility, reducing mobile load time by 20%.
-• Recognized for leading critical enhancements to Nedbank's financial platform.
+• Recognized with a "Top Performer Award" for leading critical enhancements to Nedbank's financial platform.
 • Improved legacy module performance by 25% via SOLID principles.
 Brolink - Insurance Platform | ReactJS Pages
 • Designed and developed the User Interface and experience for an insurance platform, creating a marketplace that connects insurance providers with potential customers while helping users find the best deals.
@@ -370,7 +429,7 @@ Cover Letter:`;
             let chatHistory = [];
             chatHistory.push({ role: "user", parts: [{ text: prompt }] });
             const payload = { contents: chatHistory };
-            const apiKey = "";
+            const apiKey = "YOUR_API_KEY_HERE";
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
 
             try {
@@ -404,6 +463,99 @@ Cover Letter:`;
                 loadingIndicator.classList.add('hidden');
             }
         });
+
+        // Gemini API integration for project details
+        const projectModal = document.getElementById('project-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalContentArea = document.getElementById('modal-content-area');
+        const loadingIndicatorProject = document.getElementById('loading-indicator-project');
+        const closeBtn = document.querySelector('.close-btn');
+
+        document.querySelectorAll('.expand-project-btn').forEach(button => {
+            button.addEventListener('click', async (e) => {
+                const projectId = e.target.getAttribute('data-project');
+                let projectDetails = '';
+                let projectTitle = '';
+
+                if (projectId === 'nedbank') {
+                    projectTitle = 'Nedbank Business Hub - CCI';
+                    projectDetails = `
+                        Project: Nedbank Business Hub - CCI
+                        Details:
+                        - Implemented JWT/OAuth2 for secure third-party API access.
+                        - Enhanced mobile responsiveness, reducing mobile load time by 20%.
+                        - Recognized with a "Top Performer Award" for leading critical enhancements.
+                        - Improved legacy module performance by 25% via SOLID principles.
+                    `;
+                } else if (projectId === 'brolink') {
+                    projectTitle = 'Brolink - Insurance Platform';
+                    projectDetails = `
+                        Project: Brolink - Insurance Platform
+                        Details:
+                        - Designed and developed the user interface and experience for an insurance platform.
+                        - Crafted intuitive front-end flows and built responsive UI components using ReactJS and Formik.
+                        - Integrated and tested REST APIs using Swagger and Postman.
+                    `;
+                }
+
+                // Show modal and loading indicator
+                projectModal.style.display = 'flex';
+                modalTitle.textContent = projectTitle;
+                modalContentArea.textContent = '';
+                loadingIndicatorProject.classList.remove('hidden');
+
+                const prompt = `Elaborate on the following project in a few paragraphs, focusing on the technical achievements and the business impact. Make it sound professional and detailed. Use the following project information:
+                
+                ${projectDetails}
+
+                Project Summary:`;
+
+                let chatHistory = [];
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                const payload = { contents: chatHistory };
+                const apiKey = "AIzaSyD191Z1Qr2remZZ8bgXQIjxBji3tmIlrDk";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`API call failed with status: ${response.status}`);
+                    }
+
+                    const result = await response.json();
+                    
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        modalContentArea.textContent = text;
+                    } else {
+                        modalContentArea.textContent = 'Could not generate project summary. Please try again.';
+                    }
+                } catch (error) {
+                    console.error('Error fetching from Gemini API:', error);
+                    modalContentArea.textContent = 'An error occurred while generating the summary. Please check the console for details.';
+                } finally {
+                    loadingIndicatorProject.classList.add('hidden');
+                }
+            });
+        });
+
+        // Close the modal
+        closeBtn.addEventListener('click', () => {
+            projectModal.style.display = 'none';
+        });
+
+        window.onclick = function(event) {
+            if (event.target == projectModal) {
+                projectModal.style.display = "none";
+            }
+        }
     </script>
 </body>
 </html>
