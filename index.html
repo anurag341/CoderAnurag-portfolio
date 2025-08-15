@@ -61,6 +61,33 @@
             text-decoration: none;
             cursor: pointer;
         }
+        /* Styling for the displayed resume content */
+        .resume-output-container {
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: #f8fafc;
+            color: #1f2937;
+            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+        }
+        .resume-output-container h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .resume-output-container h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .resume-output-container ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+        }
     </style>
 </head>
 <body class="bg-slate-950 text-gray-100 antialiased">
@@ -76,6 +103,7 @@
                 <li><a href="#experience" class="hover:text-indigo-400 transition-colors">Experience</a></li>
                 <li><a href="#projects" class="hover:text-indigo-400 transition-colors">Projects</a></li>
                 <li><a href="#cover-letter" class="hover:text-indigo-400 transition-colors">Cover Letter</a></li>
+                <li><a href="#resume-generator" class="hover:text-indigo-400 transition-colors">Resume Tailor</a></li>
                 <li><a href="#contact" class="hover:text-indigo-400 transition-colors">Contact</a></li>
             </ul>
             <button id="menu-btn" class="md:hidden focus:outline-none">
@@ -92,6 +120,7 @@
                 <li><a href="#experience" class="block hover:text-indigo-400 transition-colors">Experience</a></li>
                 <li><a href="#projects" class="block hover:text-indigo-400 transition-colors">Projects</a></li>
                 <li><a href="#cover-letter" class="block hover:text-indigo-400 transition-colors">Cover Letter</a></li>
+                <li><a href="#resume-generator" class="block hover:text-indigo-400 transition-colors">Resume Tailor</a></li>
                 <li><a href="#contact" class="block hover:text-indigo-400 transition-colors">Contact</a></li>
             </ul>
         </div>
@@ -133,44 +162,30 @@
         <section id="skills" class="py-16 md:py-24">
             <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center text-gray-50">Technical Skills</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Programming Languages -->
+                <!-- Languages & Frameworks -->
                 <div class="bg-slate-900 p-6 rounded-2xl shadow-xl card-hover transition-transform duration-300">
-                    <h3 class="text-xl font-bold mb-2 text-indigo-400">Programming Languages</h3>
+                    <h3 class="text-xl font-bold mb-2 text-indigo-400">Languages & Frameworks</h3>
                     <ul class="list-disc list-inside text-gray-300 space-y-1">
-                        <li>C#</li>
-                        <li>LINQ</li>
-                        <li>OOPS Concepts</li>
-                        <li>DSA</li>
+                        <li>C#, Java, C++, LINQ</li>
+                        <li>.Net Core, NET CORE Web API, Entity Framework, ASP.net MVC, React</li>
+                        <li>Angular</li>
                     </ul>
                 </div>
-                <!-- Frameworks & Technologies -->
+                <!-- Data & Databases -->
                 <div class="bg-slate-900 p-6 rounded-2xl shadow-xl card-hover transition-transform duration-300">
-                    <h3 class="text-xl font-bold mb-2 text-indigo-400">Frameworks & Technologies</h3>
+                    <h3 class="text-xl font-bold mb-2 text-indigo-400">Data & Databases</h3>
                     <ul class="list-disc list-inside text-gray-300 space-y-1">
-                        <li>.Net Core</li>
-                        <li>NET CORE Web API</li>
-                        <li>Entity Framework</li>
-                        <li>ASP.net MVC</li>
-                        <li>React</li>
+                        <li>SQL Server, SQL Scripting</li>
+                        <li>Data Streaming & Pipelines (Kafka)</li>
                     </ul>
                 </div>
-                <!-- Database Skills -->
+                <!-- DevOps & Tools -->
                 <div class="bg-slate-900 p-6 rounded-2xl shadow-xl card-hover transition-transform duration-300">
-                    <h3 class="text-xl font-bold mb-2 text-indigo-400">Database Skills</h3>
+                    <h3 class="text-xl font-bold mb-2 text-indigo-400">DevOps & Tools</h3>
                     <ul class="list-disc list-inside text-gray-300 space-y-1">
-                        <li>SQL Server</li>
-                        <li>SQL Scripting</li>
-                    </ul>
-                </div>
-                <!-- Tools -->
-                <div class="bg-slate-900 p-6 rounded-2xl shadow-xl card-hover transition-transform duration-300">
-                    <h3 class="text-xl font-bold mb-2 text-indigo-400">Tools</h3>
-                    <ul class="list-disc list-inside text-gray-300 space-y-1">
-                        <li>Git, Source Tree</li>
-                        <li>Kibana Logs</li>
-                        <li>Visual Studio, VS Code</li>
-                        <li>Swagger, Postman, Soap UI</li>
-                        <li>Sonar Qube</li>
+                        <li>Azure DevOps, GitHub, CI/CD</li>
+                        <li>Git, Source Tree, Visual Studio, VS Code, SonarQube</li>
+                        <li>Kibana Logs, Swagger, Postman, Soap UI</li>
                     </ul>
                 </div>
                 <!-- APIs & Authentication -->
@@ -179,15 +194,23 @@
                     <ul class="list-disc list-inside text-gray-300 space-y-1">
                         <li>RESTful APIs</li>
                         <li>JWT, OAuth2</li>
+                        <li>IBM's F5 Load Balancer</li>
                     </ul>
                 </div>
-                <!-- DevOps & Methodologies -->
+                <!-- Testing & Methodologies -->
                 <div class="bg-slate-900 p-6 rounded-2xl shadow-xl card-hover transition-transform duration-300">
-                    <h3 class="text-xl font-bold mb-2 text-indigo-400">DevOps & Methodologies</h3>
+                    <h3 class="text-xl font-bold mb-2 text-indigo-400">Testing & Methodologies</h3>
                     <ul class="list-disc list-inside text-gray-300 space-y-1">
-                        <li>Azure DevOps, GitHub</li>
-                        <li>Agile, Scrum, CI/CD</li>
-                        <li>Code Reviews</li>
+                        <li>Xunit Unit/End-to-End Testing, Moq</li>
+                        <li>Agile, Scrum, Waterfall, Code Reviews</li>
+                    </ul>
+                </div>
+                <!-- Emerging Technologies -->
+                <div class="bg-slate-900 p-6 rounded-2xl shadow-xl card-hover transition-transform duration-300">
+                    <h3 class="text-xl font-bold mb-2 text-indigo-400">Emerging Technologies</h3>
+                    <ul class="list-disc list-inside text-gray-300 space-y-1">
+                        <li>Artificial Intelligence</li>
+                        <li>Gen AI Experience (GitHub Copilot)</li>
                     </ul>
                 </div>
             </div>
@@ -208,11 +231,14 @@
                     </div>
                 </div>
                 <ul class="list-disc list-inside text-gray-300 space-y-3">
-                    <li>Engineered a secure RESTful API using C# and .NET Core, integrating with Microsoft Dynamics 365 to handle customer queries and log issues.</li>
-                    <li>Developed a robust RESTful API integration with a delivery company's system to retrieve real-time user data and delivery statuses, boosting customer engagement by 15%.</li>
-                    <li>Achieved 95% unit test coverage with xUnit, reducing deployment errors by 30%.</li>
-                    <li>Optimized CI/CD pipelines in Azure DevOps, cutting deployment time by 25%.</li>
-                    <li>Authored comprehensive technical documentation that reduced new developer onboarding time by 25%.</li>
+                    <li>Engineered a secure RESTful API solution using C# and .NET Core for customer queries on undelivered card shipments by integrating with Microsoft Dynamics 365 Customer Service. Collaborated with the D365 team to design API endpoints with OAuth 2.0 authentication that logs issues as cases with unique identifiers.</li>
+                    <li>Developed Expense Management API: Built and maintained an external-facing API that captures user credit card usage data by category. This data was provided to external vendors, enabling them to analyze user engagement and provide targeted offers.</li>
+                    <li>Implemented a robust RESTful API integration with a delivery company's system to retrieve real-time user data and live delivery statuses. Employed asynchronous data fetching and caching strategies to optimize performance, resulting in a 15% boost in customer engagement.</li>
+                    <li>Engineered Data Pipelines for Business Intelligence: Developed a data streaming solution using Kafka to provide real-time transaction data (e.g., account status, feature usage) to a dedicated data warehouse. This enabled downstream teams to create dashboards and reports for business stakeholders, facilitating data-driven decision-making.</li>
+                    <li>Achieved 95% unit test coverage with Xunit, significantly reducing deployment errors by 30% and ensuring high-quality production code.</li>
+                    <li>Achieved rapid project completion, delivering the solution in just 50% of the allocated time, demonstrating efficiency and technical expertise.</li>
+                    <li>Optimized CI/CD pipelines in Azure DevOps to cut deployment time by 25%, reinforcing agile practices and operational stability in a large corporate environment.</li>
+                    <li>Authored comprehensive technical documentation that reduced onboarding time for new developers by 25%, supporting effective knowledge transfer and sustainable software design.</li>
                 </ul>
             </div>
         </section>
@@ -220,7 +246,33 @@
         <!-- Projects Section -->
         <section id="projects" class="py-16 md:py-24">
             <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center text-gray-50">Key Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Movie Finder App -->
+                <div class="bg-slate-900 p-8 rounded-2xl shadow-xl card-hover transition-transform duration-300">
+                    <h3 class="text-2xl font-bold mb-2 text-indigo-400">Movie Finder App</h3>
+                    <p class="text-gray-300 mb-4">A React-based web application that allows users to search for movies using a free API.</p>
+                    <ul class="list-disc list-inside text-gray-300 space-y-2">
+                        <li>Built a dynamic and responsive UI using React and Tailwind CSS.</li>
+                        <li>Integrated with The Movie Database (TMDb) API to fetch and display movie information.</li>
+                        <li>Implemented a skeleton loading state for a better user experience.</li>
+                    </ul>
+                    <a href="https://ut258.github.io/reactApp.github.io/" target="_blank" rel="noopener noreferrer" class="mt-4 inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-full transition-colors shadow-lg">
+                        View Project ✨
+                    </a>
+                </div>
+                <!-- Recruiter CRM -->
+                <div class="bg-slate-900 p-8 rounded-2xl shadow-xl card-hover transition-transform duration-300">
+                    <h3 class="text-2xl font-bold mb-2 text-indigo-400">Recruiter CRM Web App</h3>
+                    <p class="text-gray-300 mb-4">A full-stack web application built to help job seekers and recruiters manage contacts and track the recruitment process.</p>
+                    <ul class="list-disc list-inside text-gray-300 space-y-2">
+                        <li>Designed and developed a secure contact management system using React.</li>
+                        <li>Implemented a persistent data storage solution with Firestore for secure data saving.</li>
+                        <li>Utilized Firebase Anonymous Authentication to provide a unique, private data space for each user.</li>
+                    </ul>
+                    <button class="expand-project-btn mt-4 bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-full transition-colors" data-project="recruiter-crm">
+                        Read More ✨
+                    </button>
+                </div>
                 <!-- Nedbank Business Hub -->
                 <div class="bg-slate-900 p-8 rounded-2xl shadow-xl card-hover transition-transform duration-300">
                     <h3 class="text-2xl font-bold mb-2 text-indigo-400">Nedbank Business Hub - CCI</h3>
@@ -229,7 +281,7 @@
                     </p>
                     <ul class="list-disc list-inside text-gray-300 space-y-2">
                         <li>Implemented JWT/OAuth2 for secure third-party API access.</li>
-                        <li>Enhanced mobile responsiveness, reducing mobile load time by 20%.</li>
+                        <li>Enhanced cross-device compatibility, reducing mobile load time by 20%.</li>
                         <li>Recognized with a "Top Performer Award" for leading critical enhancements.</li>
                         <li>Improved legacy module performance by 25% via SOLID principles.</li>
                     </ul>
@@ -264,8 +316,8 @@
                 <p class="text-lg text-gray-300 mb-4">
                     Paste a job description below, and I'll generate a personalized cover letter draft tailored to my experience.
                 </p>
-                <textarea id="job-description" class="w-full h-48 p-4 rounded-lg bg-slate-800 text-gray-100 placeholder-gray-500 resize-none mb-4 focus:outline-none focus:ring-2 focus:ring-indigo-600" placeholder="Paste the job description here..."></textarea>
-                <button id="generate-btn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full transition-colors shadow-lg">
+                <textarea id="job-description-cover-letter" class="w-full h-48 p-4 rounded-lg bg-slate-800 text-gray-100 placeholder-gray-500 resize-none mb-4 focus:outline-none focus:ring-2 focus:ring-indigo-600" placeholder="Paste the job description here..."></textarea>
+                <button id="generate-btn-cover-letter" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full transition-colors shadow-lg">
                     Generate Cover Letter ✨
                 </button>
                 <div id="loading-indicator-cover-letter" class="hidden mt-4 text-indigo-400">
@@ -274,6 +326,30 @@
                 <div id="cover-letter-output" class="mt-8 p-6 bg-slate-800 rounded-lg text-left whitespace-pre-wrap text-gray-300">
                     <!-- Output will be displayed here -->
                 </div>
+                <div id="error-message-cover-letter" class="hidden mt-4 p-4 rounded-lg bg-red-800 text-red-100"></div>
+            </div>
+        </section>
+
+        <!-- Resume Generator Section -->
+        <section id="resume-generator" class="py-16 md:py-24">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center text-gray-50">
+                📄 AI Resume Tailor
+            </h2>
+            <div class="bg-slate-900 p-8 md:p-12 rounded-2xl shadow-xl text-center">
+                <p class="text-lg text-gray-300 mb-4">
+                    Paste a job description below to get a tailored resume highlighting my most relevant skills and experience.
+                </p>
+                <textarea id="job-description-resume" class="w-full h-48 p-4 rounded-lg bg-slate-800 text-gray-100 placeholder-gray-500 resize-none mb-4 focus:outline-none focus:ring-2 focus:ring-indigo-600" placeholder="Paste the job description here..."></textarea>
+                <button id="generate-btn-resume" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full transition-colors shadow-lg">
+                    Generate Resume 🚀
+                </button>
+                <div id="loading-indicator-resume" class="hidden mt-4 text-indigo-400">
+                    Generating...
+                </div>
+                <div id="resume-output" class="resume-output-container hidden p-6 text-gray-800 rounded-lg text-left">
+                    <!-- The generated resume will be placed here temporarily for PDF generation -->
+                </div>
+                <div id="error-message-resume" class="hidden mt-4 p-4 rounded-lg bg-red-800 text-red-100"></div>
             </div>
         </section>
 
@@ -352,14 +428,17 @@
         });
 
         // Gemini API integration for cover letter generation
-        document.getElementById('generate-btn').addEventListener('click', async () => {
-            const jobDescription = document.getElementById('job-description').value;
+        document.getElementById('generate-btn-cover-letter').addEventListener('click', async () => {
+            const jobDescription = document.getElementById('job-description-cover-letter').value;
             const outputDiv = document.getElementById('cover-letter-output');
-            const generateBtn = document.getElementById('generate-btn');
+            const generateBtn = document.getElementById('generate-btn-cover-letter');
             const loadingIndicator = document.getElementById('loading-indicator-cover-letter');
+            const errorDiv = document.getElementById('error-message-cover-letter');
+            errorDiv.classList.add('hidden'); // Hide any previous error
 
             if (!jobDescription) {
-                outputDiv.textContent = 'Please enter a job description.';
+                errorDiv.textContent = 'Please enter a job description.';
+                errorDiv.classList.remove('hidden');
                 return;
             }
 
@@ -378,7 +457,7 @@ meetwithanuragsingh@gmail.com
 https://www.linkedin.com/in/meetwithanuragsingh/
 
 PROFESSIONAL SUMMARY
-Experienced Software Engineer specializing in .NET back-end development with a proven record of designing secure, high-quality production code. Skilled in C#, Web API, and .NET Core, with demonstrated expertise in unit testing, debugging, and agile methodologies. Proficient in utilizing Azure DevOps and Git for version control and continuous integration, while effectively developing RESTful APIs and integrations that enhance system performance.
+Experienced Software Engineer specializing in .NET back-end development with a proven record of designing secure, high-quality production code. Skilled in C#, Web API, and .NET Core, with demonstrated expertise in unit testing, debugging, and agile methodologies. Pro proficient in utilizing Azure DevOps and Git for version control and continuous integration, while effectively developing RESTful APIs and integrations that enhance system performance.
 
 TECHNICAL SKILLS
 • Programming Languages: C#, LINQ, OOPS Concepts, DSA
@@ -429,6 +508,7 @@ Cover Letter:`;
             let chatHistory = [];
             chatHistory.push({ role: "user", parts: [{ text: prompt }] });
             const payload = { contents: chatHistory };
+            // Replace 'YOUR_API_KEY_HERE' with your actual API key for this to work on GitHub Pages
             const apiKey = "AIzaSyD191Z1Qr2remZZ8bgXQIjxBji3tmIlrDk";
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
 
@@ -451,11 +531,13 @@ Cover Letter:`;
                     const text = result.candidates[0].content.parts[0].text;
                     outputDiv.textContent = text;
                 } else {
-                    outputDiv.textContent = 'Could not generate cover letter. Please try again.';
+                    errorDiv.textContent = 'Could not generate cover letter. Please try again.';
+                    errorDiv.classList.remove('hidden');
                 }
             } catch (error) {
                 console.error('Error fetching from Gemini API:', error);
-                outputDiv.textContent = 'An error occurred while generating the cover letter. Please check the console for details.';
+                errorDiv.textContent = `An error occurred: ${error.message}. Please ensure your API key is valid.`;
+                errorDiv.classList.remove('hidden');
             } finally {
                 // Re-enable button and hide loading indicator
                 generateBtn.disabled = false;
@@ -513,6 +595,7 @@ Cover Letter:`;
                 let chatHistory = [];
                 chatHistory.push({ role: "user", parts: [{ text: prompt }] });
                 const payload = { contents: chatHistory };
+                // Replace 'YOUR_API_KEY_HERE' with your actual API key for this to work on GitHub Pages
                 const apiKey = "AIzaSyD191Z1Qr2remZZ8bgXQIjxBji3tmIlrDk";
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
 
@@ -539,7 +622,7 @@ Cover Letter:`;
                     }
                 } catch (error) {
                     console.error('Error fetching from Gemini API:', error);
-                    modalContentArea.textContent = 'An error occurred while generating the summary. Please check the console for details.';
+                    modalContentArea.textContent = `An error occurred: ${error.message}. Please ensure your API key is valid.`;
                 } finally {
                     loadingIndicatorProject.classList.add('hidden');
                 }
@@ -556,6 +639,132 @@ Cover Letter:`;
                 projectModal.style.display = "none";
             }
         }
+
+        // Gemini API integration for resume generation
+        document.getElementById('generate-btn-resume').addEventListener('click', async () => {
+            const jobDescription = document.getElementById('job-description-resume').value;
+            const resumeOutputDiv = document.getElementById('resume-output');
+            const generateBtn = document.getElementById('generate-btn-resume');
+            const loadingIndicator = document.getElementById('loading-indicator-resume');
+            const errorDiv = document.getElementById('error-message-resume');
+            errorDiv.classList.add('hidden'); // Hide any previous error
+            resumeOutputDiv.classList.add('hidden'); // Hide the resume output container initially
+            resumeOutputDiv.innerHTML = ''; // Clear previous resume content
+
+            if (!jobDescription) {
+                errorDiv.textContent = 'Please enter a job description.';
+                errorDiv.classList.remove('hidden');
+                return;
+            }
+
+            // Disable button and show loading indicator
+            generateBtn.disabled = true;
+            generateBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            loadingIndicator.classList.remove('hidden');
+            
+            // Resume content hardcoded into the script for the prompt
+            const resumeText = `
+Anurag Singh
+Location: Pune, India
+meetwithanuragsingh@gmail.com
++91-831-871-3928
+https://www.linkedin.com/in/meetwithanuragsingh/
+
+PROFESSIONAL SUMMARY
+Experienced Software Engineer specializing in .NET back-end development with a proven record of designing secure, high-quality production code. Skilled in C#, Web API, and .NET Core, with demonstrated expertise in unit testing, debugging, and agile methodologies. Pro proficient in utilizing Azure DevOps and Git for version control and continuous integration, while effectively developing RESTful APIs and integrations that enhance system performance.
+
+TECHNICAL SKILLS
+• Programming Languages: C#, LINQ, OOPS Concepts, DSA
+• Frameworks & Technologies: .Net Core, NET CORE Web API, Entity Framework, ASP.net MVC, React
+• Database Skills: SQL Server, SQL Scripting
+• Tools: Git, Source Tree, Kibana Logs, Visual Studio, Visual Studio Code, Swagger, Postman, Soap UI, Sonar Qube
+• Testing: Xunit Unit/End-to-End Testing
+• APIs & Authentication: RESTful APIs, JWT, OAuth2
+• DevOps: Azure DevOps, GitHub
+• Methodologies: Agile, Scrum, Waterfall, CI/CD, Code Reviews
+• Emerging Technologies: Artificial Intelligence
+• Gen Al Experience: Effectively utilized GitHub Copilot as an Al-powered assistant to enhance development efficiency while maintaining full control over code quality., Used Copilot to generate boilerplate code, explore alternative solutions, and accelerate repetitive tasks, allowing more focus on complex problem-solving and architectural decisions.
+
+PROFESSIONAL EXPERIENCE
+Nihilent Limited, Senior Software Engineer - Backend Developer (Pune, India, May 2022 - Present)
+• Engineered a secure RESTful API solution using C# and .NET Core for customer queries on undelivered card shipments by integrating with Microsoft Dynamics 365 Customer Service. Collaborated with the D365 team to design API endpoints with OAuth 2.0 authentication that logs issues as cases with unique identifiers.
+• Implemented a robust RESTful API integration with a delivery company's system to retrieve real-time user data and live delivery statuses. Employed asynchronous data fetching and caching strategies to optimize performance, resulting in a 15% boost in customer engagement.
+• Achieved 95% unit test coverage with xUnit, significantly reducing deployment errors by 30% and ensuring high-quality production code.
+• Achieved rapid project completion, delivering the solution in just 50% of the allocated time, demonstrating efficiency and technical expertise.
+• Optimized CI/CD pipelines in Azure DevOps to cut deployment time by 25%, reinforcing agile practices and operational stability in a large corporate environment.
+• Authored comprehensive technical documentation that reduced new developer onboarding time by 25%, supporting effective knowledge transfer and sustainable software design.
+
+KEY PROJECTS
+Nedbank Business Hub - CCI (Corporate Card Issuing)
+• Security Integration: Implemented JWT/OAuth2 for secure third-party API access.
+• Mobile Responsiveness: Enhanced cross-device compatibility, reducing mobile load time by 20%.
+• Recognized with a "Top Performer Award" for leading critical enhancements to Nedbank's financial platform.
+• Improved legacy module performance by 25% via SOLID principles.
+Brolink - Insurance Platform | ReactJS Pages
+• Designed and developed the User Interface and experience for an insurance platform, creating a marketplace that connects insurance providers with potential customers while helping users find the best deals.
+• Crafted intuitive front-end flows and built responsive UI components using ReactJS and Formik, performed validation, improving user engagement and interaction.
+• Integrated and tested REST APIs using Swagger and Postman.
+
+EDUCATION
+Chandigarh University, Bachelor of Engineering (B.E), Computer Science, May 2022
+            `;
+
+            const prompt = `You are a resume tailoring assistant. Given a job description and a resume, create a new professional resume that highlights the most relevant skills and experience from the provided resume that match the job description. The output should be a formatted resume in markdown, ready to be copied and pasted. Do not use double asterisks for bolding.
+            
+Job Description:
+${jobDescription}
+
+Anurag Singh's Resume:
+${resumeText}
+
+Tailored Resume:`;
+
+            let chatHistory = [];
+            chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+            const payload = { contents: chatHistory };
+            // Replace 'YOUR_API_KEY_HERE' with your actual API key for this to work on GitHub Pages
+            const apiKey = "AIzaSyD191Z1Qr2remZZ8bgXQIjxBji3tmIlrDk";
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API call failed with status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    
+                    // Replace markdown headings with HTML for better display
+                    const htmlText = text.replace(/### (.*)/g, '<h3>$1</h3>').replace(/## (.*)/g, '<h2>$1</h2>').replace(/\n/g, '<br/>');
+                    
+                    resumeOutputDiv.innerHTML = `<div class="p-6">${htmlText}</div>`;
+                    resumeOutputDiv.classList.remove('hidden');
+
+                } else {
+                    errorDiv.textContent = 'Could not generate resume. Please try again.';
+                    errorDiv.classList.remove('hidden');
+                }
+            } catch (error) {
+                console.error('Error fetching from Gemini API:', error);
+                errorDiv.textContent = `An error occurred: ${error.message}. Please ensure your API key is valid.`;
+                errorDiv.classList.remove('hidden');
+            } finally {
+                // Re-enable button and hide loading indicator
+                generateBtn.disabled = false;
+                generateBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                loadingIndicator.classList.add('hidden');
+            }
+        });
     </script>
 </body>
 </html>
